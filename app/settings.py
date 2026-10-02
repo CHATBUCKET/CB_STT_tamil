@@ -13,10 +13,8 @@ def _env(name: str, default, cast=str):
 @dataclass(frozen=True)
 class Settings:
     # Model
-    language: str = _env("LANGUAGE", "telugu")
+    language: str = _env("LANGUAGE", "tamil")
     model_dir: Path = _env("MODEL_DIR", "models", Path)
-    # gs://bucket/prefix — models are read from gs://bucket/prefix/<language>/
-    model_gcs_uri: str = _env("MODEL_GCS_URI", "")
 
     # Inference
     provider: str = _env("PROVIDER", "cpu")                  # cpu | cuda
